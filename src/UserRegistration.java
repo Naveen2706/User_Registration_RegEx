@@ -15,13 +15,18 @@ public class UserRegistration {
         return Pattern.matches("^[a-zA-Z0-9.]+@[a-zA-Z0-9.]+$", email);
     }
 
+    public boolean mobileValidation(String phone) {
+        return Pattern.matches("^[0-9]{3} [a-zA-Z0-9]{10}$", phone);
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         UserRegistration person = new UserRegistration();
-        String firstName = scanner.nextLine();
-        String lastName = scanner.nextLine();
-        String email = scanner.nextLine();
+//        String firstName = scanner.nextLine();
+//        String lastName = scanner.nextLine();
+//        String email = scanner.nextLine();
+        String phone = scanner.nextLine();
         System.out.println("Welcome to User Registration Program");
-        System.out.println(person.emailValidation(email));
+        System.out.println(person.mobileValidation(phone));
     }
 }
