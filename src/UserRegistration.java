@@ -12,7 +12,7 @@ public class UserRegistration {
     }
 
     public boolean emailValidation(String email) {
-        return Pattern.matches("^[a-zA-Z0-9.]+@[a-zA-Z0-9.]+$", email);
+        return Pattern.matches("^[a-zA-Z0-9-.+]+@[a-zA-Z0-9.]+$", email);
     }
 
     public boolean mobileValidation(String phone) {
@@ -28,11 +28,19 @@ public class UserRegistration {
         UserRegistration person = new UserRegistration();
 //        String firstName = scanner.nextLine();
 //        String lastName = scanner.nextLine();
-//        String email = scanner.nextLine();
 //        String phone = scanner.nextLine();
-        String password = scanner.nextLine();
+//        String password = scanner.nextLine();
 
         System.out.println("Welcome to User Registration Program");
-        System.out.println(person.passwordVal(password));
+
+        System.out.println("Valid Emails :");
+        System.out.println(person.emailValidation("abc@yahoo.com"));
+        System.out.println(person.emailValidation("abc-100@yahoo.com"));
+        System.out.println(person.emailValidation("abc111@abc.com"));
+        System.out.println(person.emailValidation("abc-100@abc.net"));
+        System.out.println(person.emailValidation("abc.100@abc.com.au"));
+        System.out.println(person.emailValidation("abc@1.com"));
+        System.out.println(person.emailValidation("abc@gmail.com.com"));
+        System.out.println(person.emailValidation("abc+100@gmail.com"));
     }
 }
