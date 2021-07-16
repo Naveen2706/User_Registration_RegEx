@@ -36,3 +36,4 @@ public class UserRegistration {
         System.out.println(person.passwordVal(password));
     }
 }
+
