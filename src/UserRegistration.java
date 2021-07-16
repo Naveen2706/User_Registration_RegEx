@@ -20,7 +20,7 @@ public class UserRegistration {
     }
 
     public boolean passwordVal(String password) {
-        return Pattern.matches("^[0-9]{8,}$", password);
+        return Pattern.matches("^[A-Za-z0-9]{8,}$", password);
     }
 
     public static void main(String[] args) {
