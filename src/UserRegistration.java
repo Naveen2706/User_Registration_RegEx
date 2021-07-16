@@ -20,27 +20,19 @@ public class UserRegistration {
     }
 
     public boolean passwordVal(String password) {
-        return Pattern.matches("(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$", password);
+        return Pattern.matches("^[0-9]{8,}$", password);
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         UserRegistration person = new UserRegistration();
+
 //        String firstName = scanner.nextLine();
 //        String lastName = scanner.nextLine();
 //        String phone = scanner.nextLine();
-//        String password = scanner.nextLine();
+        String password = scanner.nextLine();
 
         System.out.println("Welcome to User Registration Program");
-
-        System.out.println("Valid Emails :");
-        System.out.println(person.emailValidation("abc@yahoo.com"));
-        System.out.println(person.emailValidation("abc-100@yahoo.com"));
-        System.out.println(person.emailValidation("abc111@abc.com"));
-        System.out.println(person.emailValidation("abc-100@abc.net"));
-        System.out.println(person.emailValidation("abc.100@abc.com.au"));
-        System.out.println(person.emailValidation("abc@1.com"));
-        System.out.println(person.emailValidation("abc@gmail.com.com"));
-        System.out.println(person.emailValidation("abc+100@gmail.com"));
+        System.out.println(person.passwordVal(password));
     }
 }
